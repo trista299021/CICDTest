@@ -7,9 +7,11 @@ platform:
   arch: arm64
 
 steps:
-- name: greeting
-  image: alpine
+- name: build
+  image: golang:1.19
+  environment:
+    GOOS=linux
+    COARCH=arm64
   commands:
-  - echo hello
-  - echo world
-  - echo again
+  - go build
+  - go test
