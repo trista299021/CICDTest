@@ -9,9 +9,6 @@ platform:
 steps:
 - name: build
   image: golang:1.19
-  environment:
-    GOOS=linux
-    COARCH=arm64
   commands:
   - go build
   - go test
